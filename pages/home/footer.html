@@ -27,6 +27,9 @@
 <script>
 (function(){
   'use strict';
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var touch   = matchMedia('(hover: none), (pointer: coarse)').matches;
+
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
       if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
@@ -43,5 +46,54 @@
       }
     });
   });
+
+  /* ---------- 3D CARD TILT (desktop only) ---------- */
+  if (!touch && !reduced) {
+    var tiltables = document.querySelectorAll('.svc, .chip, .plate, .badge');
+    tiltables.forEach(function(el){
+      var raf = false, tx=0, ty=0;
+      el.addEventListener('mousemove', function(e){
+        var r = el.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width;
+        var py = (e.clientY - r.top) / r.height;
+        tx = (py - 0.5) * -8;
+        ty = (px - 0.5) * 10;
+        if (!raf) {
+          raf = true;
+          requestAnimationFrame(function(){
+            el.classList.add('is-tilt');
+            el.style.transform = 'perspective(1200px) rotateX('+tx.toFixed(2)+'deg) rotateY('+ty.toFixed(2)+'deg) translateZ(12px)';
+            raf = false;
+          });
+        }
+      });
+      el.addEventListener('mouseleave', function(){
+        el.classList.remove('is-tilt');
+        el.style.transform = '';
+      });
+    });
+
+    /* ---------- HERO PARALLAX (subtle) ---------- */
+    var heroImg = document.querySelector('.hero__img');
+    var hero = document.querySelector('.hero');
+    if (heroImg && hero) {
+      var hraf = false, mx=0, my=0;
+      hero.addEventListener('mousemove', function(e){
+        var r = hero.getBoundingClientRect();
+        mx = ((e.clientX - r.left) / r.width - 0.5) * -20;
+        my = ((e.clientY - r.top)  / r.height - 0.5) * -14;
+        if (!hraf) {
+          hraf = true;
+          requestAnimationFrame(function(){
+            heroImg.style.transform = 'translate3d('+mx.toFixed(1)+'px,'+my.toFixed(1)+'px,0) scale(1.04)';
+            hraf = false;
+          });
+        }
+      });
+      hero.addEventListener('mouseleave', function(){
+        heroImg.style.transform = '';
+      });
+    }
+  }
 })();
 </script>
