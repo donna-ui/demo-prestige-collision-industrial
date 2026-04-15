@@ -17,7 +17,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="preload" as="image" fetchpriority="high" href="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=2200&q=78&auto=format&fit=crop">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&family=Barlow:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 <style>
@@ -1112,7 +1113,7 @@ section { content-visibility: auto; contain-intrinsic-size: auto 700px; }
     <a href="#crew">Crew</a>
     <a href="#voices">Reviews</a>
   </div>
-  <a href="tel:+17142389253" class="nav__cta">Call · 714.238.9253</a>
+  <a href="#book" class="nav__cta">Book Estimate →</a>
 </nav>
 
 <!-- HERO -->
@@ -1136,11 +1137,12 @@ section { content-visibility: auto; contain-intrinsic-size: auto 700px; }
       A SHOWROOM.
     </h1>
     <p class="hero__subline">
-      22 years on East La Palma. One crew. Every insurance. Lifetime warranty on every weld, every seam, every coat.
+      22 years on East La Palma. Free estimate in 60 seconds — pick a time, upload a photo, we handle the rest.
     </p>
     <div class="hero__ctas">
-      <a href="tel:+17142389253" class="btn btn--orange">Call the shop</a>
-      <a href="#catalog" class="btn btn--ghost">See the work</a>
+      <a href="#book" class="btn btn--orange">Book Free Estimate →</a>
+      <a href="#tow" class="btn btn--ghost">Request Tow</a>
+      <a href="#catalog" class="btn btn--ghost">See Services</a>
     </div>
   </div>
 </section>
@@ -1291,20 +1293,27 @@ section { content-visibility: auto; contain-intrinsic-size: auto 700px; }
       <span>SHEET 1 / 1</span>
     </div>
     <div class="process__label">— HOW IT ACTUALLY GOES</div>
-    <h2 class="process__title">NO PORTAL.<br>NO RUNAROUND.<br><em>JUST A CALL.</em></h2>
+    <h2 class="process__title">THREE CLICKS.<br>NO RUNAROUND.<br><em>BOOK IT.</em></h2>
 
     <ol class="steps">
       <li>
         <div>
-          <h4>Call the shop.</h4>
-          <p>Tell us what happened. We'll tell you what to do next. One call, no phone tree.</p>
+          <h4>Pick what you need.</h4>
+          <p>Estimate, tow, drop-off, or custom quote. Upload a photo if you've got one.</p>
         </div>
-        <div class="dur">DURATION<strong>~5 MIN</strong></div>
+        <div class="dur">TURN<strong>~60 SEC</strong></div>
+      </li>
+      <li>
+        <div>
+          <h4>Pick your time.</h4>
+          <p>Live calendar. No phone tag. 30-minute windows, Monday through Saturday.</p>
+        </div>
+        <div class="dur">TURN<strong>~30 SEC</strong></div>
       </li>
       <li>
         <div>
           <h4>Written estimate, same day.</h4>
-          <p>Bring it in or text photos. Written number before end of business.</p>
+          <p>Ulysses reviews personally. Written number to your inbox before end of business.</p>
         </div>
         <div class="dur">TURN<strong>SAME DAY</strong></div>
       </li>
@@ -1314,13 +1323,6 @@ section { content-visibility: auto; contain-intrinsic-size: auto 700px; }
           <p>Every carrier. Supplements, adjusters, the whole paperwork stack. Handled.</p>
         </div>
         <div class="dur">TURN<strong>24–48 HRS</strong></div>
-      </li>
-      <li>
-        <div>
-          <h4>Choices stay with you.</h4>
-          <p>OEM vs aftermarket. Repair vs replace. We lay it out. You decide.</p>
-        </div>
-        <div class="dur">TURN<strong>AS NEEDED</strong></div>
       </li>
       <li>
         <div>
@@ -1371,13 +1373,13 @@ section { content-visibility: auto; contain-intrinsic-size: auto 700px; }
 <!-- TICKER -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker__track">
-    <a href="tel:+17142389253">CALL THE SHOP</a><span class="dot">▲</span>
-    <a href="tel:+17142389253">714.238.9253</a><span class="dot">▲</span>
+    <a href="#book">BOOK FREE ESTIMATE</a><span class="dot">▲</span>
+    <span>60-SECOND ONLINE BOOKING</span><span class="dot">▲</span>
     <span>22 YEARS · ANAHEIM</span><span class="dot">▲</span>
     <span>LIFETIME WARRANTY</span><span class="dot">▲</span>
     <span>EVERY INSURANCE</span><span class="dot">▲</span>
-    <a href="tel:+17142389253">CALL THE SHOP</a><span class="dot">▲</span>
-    <a href="tel:+17142389253">714.238.9253</a><span class="dot">▲</span>
+    <a href="#book">BOOK FREE ESTIMATE</a><span class="dot">▲</span>
+    <span>60-SECOND ONLINE BOOKING</span><span class="dot">▲</span>
     <span>22 YEARS · ANAHEIM</span><span class="dot">▲</span>
     <span>LIFETIME WARRANTY</span><span class="dot">▲</span>
     <span>EVERY INSURANCE</span><span class="dot">▲</span>
@@ -1398,8 +1400,9 @@ section { content-visibility: auto; contain-intrinsic-size: auto 700px; }
           <p>3470 E La Palma Ave<br>Anaheim, CA 92806</p>
         </div>
         <div>
-          <h4>CALL</h4>
-          <a href="tel:+17142389253">(714) 238-9253</a>
+          <h4>BOOK</h4>
+          <a href="#book">Schedule Estimate →</a>
+          <p style="font-size:12px; margin-top:4px; color: var(--zinc);">or (714) 238-9253</p>
         </div>
         <div>
           <h4>HOURS</h4>
@@ -1431,7 +1434,7 @@ section { content-visibility: auto; contain-intrinsic-size: auto 700px; }
   </div>
 </footer>
 
-<a href="tel:+17142389253" class="sticky-cta">CALL · 714.238.9253</a>
+<a href="#book" class="sticky-cta">BOOK FREE ESTIMATE →</a>
 <!-- PRESTIGE COLLISION — DIRECTION B FOOTER SCRIPTS -->
 
 <script type="application/ld+json">
